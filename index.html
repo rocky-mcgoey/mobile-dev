@@ -8,7 +8,6 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 		/>
-		<link rel="stylesheet" href="./style/main.css" />
 		<title>Overlapse | Home</title>
 	</head>
 	<body class="min-h-lvh flex-col flex bg-gray-100 text-gray-800 font-sans p-4">
@@ -59,16 +58,16 @@
 							</div>
 
 							<div class="-mr-4 flex items-center">
-								<a
-									class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4 grid"
+								<button
+									class="edit-btn inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4 grid"
 								>
 									<i class="fa-solid fa-pen-to-square"></i>
-								</a>
-								<a
+								</button>
+								<button
 									class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4"
 								>
 									<i class="fa-solid fa-trash"></i>
-								</a>
+								</button>
 							</div>
 						</article>
 					</li>
@@ -81,16 +80,16 @@
 							</div>
 
 							<div class="-mr-4 flex items-center">
-								<a
-									class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4 grid"
+								<button
+									class="edit-btn inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4 grid"
 								>
 									<i class="fa-solid fa-pen-to-square"></i>
-								</a>
-								<a
+								</button>
+								<button
 									class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4"
 								>
 									<i class="fa-solid fa-trash"></i>
-								</a>
+								</button>
 							</div>
 						</article>
 					</li>
@@ -103,16 +102,16 @@
 							</div>
 
 							<div class="-mr-4 flex items-center">
-								<a
-									class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4 grid"
+								<button
+									class="edit-btn inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4 grid"
 								>
 									<i class="fa-solid fa-pen-to-square"></i>
-								</a>
-								<a
+								</button>
+								<button
 									class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4"
 								>
 									<i class="fa-solid fa-trash"></i>
-								</a>
+								</button>
 							</div>
 						</article>
 					</li>
@@ -125,16 +124,16 @@
 							</div>
 
 							<div class="-mr-4 flex items-center">
-								<a
-									class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4 grid"
+								<button
+									class="edit-btn inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4 grid"
 								>
 									<i class="fa-solid fa-pen-to-square"></i>
-								</a>
-								<a
+								</button>
+								<button
 									class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4"
 								>
 									<i class="fa-solid fa-trash"></i>
-								</a>
+								</button>
 							</div>
 						</article>
 					</li>
@@ -147,21 +146,92 @@
 							</div>
 
 							<div class="-mr-4 flex items-center">
-								<a
-									class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4 grid"
+								<button
+									class="edit-btn inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4 grid"
 								>
 									<i class="fa-solid fa-pen-to-square"></i>
-								</a>
-								<a
+								</button>
+								<button
 									class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mr-4"
 								>
 									<i class="fa-solid fa-trash"></i>
-								</a>
+								</button>
 							</div>
 						</article>
 					</li>
 				</ul>
 			</section>
+
+			<dialog
+				id="edit-modal"
+				class="m-auto p-2 backdrop:bg-black/70 rounded-md"
+			>
+				<h2 class="text-lg text-center font-semibold mb-4">
+					Edit This Meeting
+				</h2>
+				<form method="dialog">
+					<div class="mb-4 relative pt-5">
+						<input
+							id="edit-title"
+							class="pl-3 p-2 pt-6 border rounded-sm peer w-full"
+							type="text"
+							name="edit-title"
+						/>
+						<label
+							class="absolute -top-[0rem] left-[.5rem] leading-none peer-focus:top-[1.5rem] transition-all"
+							for="edit-title"
+							>Title</label
+						>
+					</div>
+					<div class="mb-4 relative pt-5">
+						<textarea
+							id="edit-description"
+							class="pl-3 p-2 pt-6 border rounded-sm peer w-full"
+							name="edit-description"
+							rows="4"
+							cols="50"
+						>
+						</textarea>
+						<label
+							class="absolute -top-[0rem] left-[.5rem] leading-none peer-focus:top-[1.5rem] transition-all"
+							for="edit-description"
+							>Description
+						</label>
+					</div>
+					<div class="flex gap-2 justify-end">
+						<button
+							type="button"
+							id="cancel-btn"
+							class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded"
+						>
+							Cancel
+						</button>
+						<button
+							type="submit"
+							class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+						>
+							Save
+						</button>
+					</div>
+				</form>
+			</dialog>
 		</main>
+		<script lang="javascript">
+			const modal = document.getElementById('edit-modal');
+
+			const editButtons = document.querySelectorAll('.edit-btn');
+
+			const cancelBtn = document.getElementById('cancel-btn');
+
+			editButtons.forEach(button => {
+				button.addEventListener('click', () => {
+					modal.showModal();
+				});
+			});
+
+			cancelBtn.addEventListener('click', () => {
+				modal.close();
+			});
+		</script>
 	</body>
 </html>
